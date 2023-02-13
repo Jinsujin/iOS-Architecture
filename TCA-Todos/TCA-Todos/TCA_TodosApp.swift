@@ -1,17 +1,15 @@
-//
-//  TCA_TodosApp.swift
-//  TCA-Todos
-//
-//  Created by Sujin Jin on 2023/02/08.
-//
-
 import SwiftUI
+import ComposableArchitecture
 
 @main
 struct TCA_TodosApp: App {
     var body: some Scene {
         WindowGroup {
-            ContentView()
+            FeatureView(store: Store(
+                initialState: Feature.State(),
+                reducer: Feature()
+                )
+            )
         }
     }
 }
